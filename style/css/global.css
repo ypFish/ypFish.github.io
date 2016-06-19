@@ -1,0 +1,42 @@
+@charset "utf-8";
+/*golbal公用属性*/
+*{
+	padding: 0;
+    margin: 0;
+}
+
+*,*:before,*:after{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+* html body {overflow:visible;}
+
+body{
+	font:14px/1.2 'Hiragino Sans GB','Macrosoft YaHei','微软雅黑',SimSun,Tahoma,Airal,Helvetica,STHeiti;
+	font-smoothing:antialiased;
+	-webkit-font-smoothing:antialiased;
+	vertical-align:middle;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+div,dl,dt,dd,form,h1,h2,h3,h4,h5,h6,img,ol,ul,li,table,th,td,p,span,a,i,strong,b{border: 0;}
+
+ul,ol,dl,dt,dd,li{list-style: none;}
+
+a{text-decoration: none;}
+
+a:link,a:visited,a:hover,a:active{
+	text-decoration: none;
+	outline: none;
+}
+
+h1 { font-size:24px; }
+h2 { font-size:20px; }
+h3 { font-size:18px; }
+h4 { font-size:16px; }
+h5 { font-size:14px; }
+h6 { font-size:12px; }

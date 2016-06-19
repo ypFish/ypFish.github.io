@@ -1,0 +1,52 @@
+@charset "utf-8";
+// 首页整体样式
+//首页总宽度
+@pageAllWidth:980px;
+//首页背景颜色
+@pageBackColor:#FFF;
+// #FFFAFA;
+// #ECF0F1;
+//阿里妈妈图标引用
+@font-face {font-family: 'iconfont';
+    src: url('../../res/static/font/iconfont.eot'); /* IE9*/
+    src: url('../../res/static/font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../../res/static/font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../../res/static/font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../../res/static/font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+//通用图标样式
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:26px;
+    line-height: 1;
+    font-weight: normal;
+    color:#FFF;
+    text-shadow: 0 1px 10px rgba(0,0,0,.9);
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+//总体页面背景
+body{
+    background-color: @pageBackColor;
+}
+
+//外层容器居中
+.container{
+    width: @pageAllWidth;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    //border-left: 1px solid #e1e1e1;
+    //border-right: 1px solid #e1e1e1;
+    // background-color: #FFF;
+    color:#333;
+}
+
+
+
+

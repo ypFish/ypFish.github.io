@@ -1,0 +1,606 @@
+@charset "utf-8";
+
+//移动端样式表
+
+//阿里妈妈图标引用
+@font-face {font-family: 'iconfont';
+    src: url('../../../res/static/font/iconfont.eot'); /* IE9*/
+    src: url('../../../res/static/font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../../../res/static/font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../../../res/static/font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../../../res/static/font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+//title中字体颜色
+@headfontColor:#333333;
+//首页灰背景颜色
+@backColorGray:rgba(200,200,200,0.3);
+
+//侧边栏图标样式
+.icon_content_icon{
+	font-family:"iconfont" !important;
+    line-height: 1;
+    font-style:normal;
+    letter-spacing: 0.2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // -webkit-text-stroke-width: 0.2px;
+}
+
+//移动端专用：全局样式:
+//解决弹性滚动的生涩问题
+body{
+	-webkit-overflow-scrolling:touch;
+}
+//禁止以下标签选中时背景变灰
+a,button,input,optgroup,select,textarea{
+	-webkit-tap-highlight-color:raba(0,0,0,0);
+}
+//清除输入框内阴影和外阴影
+input,textarea{
+	-webkit-appearance:none;
+	border:1px solid;
+}
+//在ios中禁止长按链接与图片弹出菜单
+a,img{
+	-webkit-touch-callout:none;
+}
+
+//重要：rem单位，全局尺寸控制
+html{
+	font-size:12px;
+}
+
+//煤体查询
+@media screen{
+	html{font-size:14px;}
+	//body{border:1px solid yellow;}
+}
+@media screen and (max-width:820px){
+	html{font-size:15px;}
+	//body{border:1px solid red;}
+}
+@media screen and (max-width:560px){
+	html{font-size:14px;}
+	//body{border:1px solid green;}
+}
+@media screen and (max-width:375px){
+	html{font-size:13px;}
+	//body{border:1px solid pink;}
+}
+@media screen and (max-width:320px){
+	html{font-size:12px;}
+	//body{border:1px solid blue;}
+}
+
+//页首区
+.header{
+	padding-top: 2px;
+	padding-bottom:0.6rem;
+	width: 100%;
+	//height: 130px;
+	color: @headfontColor;
+	text-align: center;
+	background: -webkit-linear-gradient(@backColorGray,rgba(256,256,256,0));
+	background: linear-gradient(@backColorGray,rgba(256,256,256,0));
+}
+
+//地球图标样式
+.icon_head_earth{
+
+    font-family:"iconfont" !important;
+    line-height: 1;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // -webkit-text-stroke-width: 0.2px;
+}
+
+//搜索图标样式
+.icon_head_search{
+
+	font-family:"iconfont" !important;
+    line-height: 1;
+    // vertical-align: top;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+//页首网站描述图标
+.icon_head_des{
+	font-family:"iconfont" !important;
+    line-height: 1;
+    font-style:normal;
+    letter-spacing: 0.2rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  	//-webkit-text-stroke-width: 0.2px;
+}
+
+//页首正文标题
+.header_title{
+	font-size: 2.4rem;
+	margin-top: 6px;
+	margin-bottom: 0.8rem;
+	display:inline-block;
+	line-height: 1.4;
+	height:3.2rem;
+	position: relative;
+
+	&:before{
+		content: '\200B';
+		position: absolute;
+		top: -2px;
+		left: -0.7rem;
+		width: 2rem;
+		height: 2rem;
+		border-top: 4px solid @headfontColor;
+		border-left: 4px solid @headfontColor;
+	    border-top-left-radius: 8px;
+	}
+
+	&:after{
+		content: '\200B';
+		position: absolute;
+		bottom: -1px;
+		right: -0.7rem;
+		width: 2rem;
+		height: 2rem;
+		border-bottom: 4px solid @headfontColor;
+		border-right: 4px solid @headfontColor;
+		border-bottom-right-radius: 8px;
+	}
+}
+
+//页首搜索框
+.header_search_input{
+	width: 74%;
+	height: 3.2rem;
+	line-height: 3rem;
+	text-indent: 1em;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: 2px solid #999999;
+	font-family: 'Hiragino Sans GB','Macrosoft YaHei','微软雅黑',SimSun,Tahoma,Airal,Helvetica,STHeiti;
+	color: @headfontColor;
+	font-size: 1.2rem;
+	background-color: #FFFAFA;
+	outline: none; //消除默认样式(选中后变成蓝色)
+}
+
+//页首搜索按键
+.header_search_button{
+	width: 16%;
+	height: 3.2rem;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	display: inline-block;
+	vertical-align: top;
+	border: 2px solid #999999;
+	font-family: 'Hiragino Sans GB','Macrosoft YaHei','微软雅黑',SimSun,Tahoma,Airal,Helvetica,STHeiti;
+	font-size: 1.4rem;
+	//font-weight: bold;
+	background-color: #FFFFFF;
+	color: #999999;
+	text-align: center;
+	line-height: 3.2rem;
+	margin-left: -7px;
+}
+
+//页首网站内容介绍
+.header_description{
+	margin-top: 4px;
+	font-size: 0.9rem;
+	font-weight: bold;
+
+	color: @headfontColor;
+	color:#999999;
+	-webkit-font-smoothing:antialiased;
+	span{
+		margin-left: .5rem;
+		margin-right: .5rem;
+	}
+}
+
+
+//轮询图区域
+@contentDemoHeight:19.8rem;
+//内容区轮播插图
+.content_demo{
+	width: 100%;
+	height: @contentDemoHeight;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	//background: linear-gradient(rgba(256,256,256,0),@backColorGray);
+
+}
+
+//轮播主图容器
+.content_figure{
+	
+	position: absolute;
+	z-index:5;
+	background-color: #FFFFFF;
+	width: 100%;
+	height: @contentDemoHeight;
+}
+
+//轮播图片
+.content_img{
+	width: 100%;
+	height: 15rem;
+	cursor: pointer;
+	position: absolute;
+	z-index:11;
+}
+
+
+//轮播主图描述容器
+.content_figcaption{
+	position: absolute;
+	bottom: 1rem;
+	z-index:11;
+	width: 100%;
+}
+
+//轮播主图标题
+.content_figcaption_title{
+
+	display: inline-block;
+	font-family: 'Hiragino Sans GB','Macrosoft YaHei','微软雅黑',SimSun,Tahoma,Airal,Helvetica,STHeiti;
+	width:100%;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1.4rem;
+	text-align:center;
+	font-weight:bold;
+}
+
+//轮播图描述容器
+.content_figcaption_box{
+	display:-ms-flexbox;
+	display:-webkit-box;
+	display:flex;
+	display:-webkit-flex;
+	width:90%;
+}
+
+//轮播作者头像
+.content_figcaption_img{
+	margin-left:2rem;
+	margin-right:0.5rem;
+	width:1rem;
+	height: 1rem;
+	border-radius: 1rem;
+}
+
+//轮播作者名称
+.content_figcaption_name{
+
+	-ms-flex:1;
+
+	    -webkit-box-flex:1;
+
+	        -webkit-flex:1;
+
+	        flex:1;
+
+	display: inline-block;
+	color: #666666;
+	font-size: 1rem;
+	height: 1rem;
+	line-height: 1;
+	text-align: left;
+}
+
+//轮播图日期
+.content_figcaption_date{
+	
+	-ms-flex:1;
+	
+	    -webkit-box-flex:1;
+	
+	        -webkit-flex:1;
+	
+	        flex:1;
+
+	display: inline-block;
+	color: #666666;
+	font-size: 1rem;
+	height: 1rem;
+	line-height: 1;
+	text-align: right;
+}
+	
+
+// 内容区 筛选按钮
+.content_list_block_line{
+	border-bottom:1px solid #CCCCCC;
+	border-top:1px solid rgba(0,0,0,0);
+	width:100%;
+	height:2rem;
+	margin-top:0.2rem;
+	padding:0px;
+
+}
+
+// 内容区 筛选"最热"按钮
+.content_list_hotButton{
+
+	margin:0px 0.5rem 0px 1.2rem ;
+	display: inline-block;
+	height:1.9rem;
+	line-height:2.1rem;
+	padding-left:1rem;
+	padding-right:1rem;
+	font-size:1rem;
+
+}
+
+
+// 内容区 筛选"最新"按钮
+.content_list_newButton{
+
+	margin:0px 1.2rem 0px 0.5rem ;
+	display: inline-block;
+	height:1.9rem;
+	line-height:2.1rem;
+	padding-left:1rem;
+	padding-right:1rem;
+	font-size:1rem;
+}
+
+
+// 内容区 筛选"最X"按钮 选中效果
+.content_list_buttom_selected{
+	color:#FFFFFF;
+	background-color:#DC143C;
+}
+
+// 数据块区域
+content_list{
+	width:100%;
+}
+
+// 数据块
+.content_list_block{
+
+	width:96%;
+	height:8rem;
+	margin-top:0.6rem;
+	margin-left:2%;
+
+	display:-ms-flexbox;
+	display:-webkit-box;
+	display:flex;
+	display:-webkit-flex;
+	color:@headfontColor;
+	border-bottom:1px solid #CCCCCC;
+	border-top:1px solid #CCCCCC;
+	
+}
+
+// 数据块 模板 用于动态添加是 克隆的DOM 不可见 
+.content_list_block_model{
+
+	
+	.content_list_block;
+	display: none;
+	
+}
+
+
+//数据块图片容器
+.content_list_block_imgbox{
+	
+	width:12.5rem;
+	//min-width:12.5rem;
+	height:100%;
+
+}
+
+//数据块内容容器
+.content_list_block_info{
+	
+	padding-left:0.5rem;
+	-ms-flex:1;
+	    -webkit-box-flex:1;
+	        -webkit-flex:1;
+	        flex:1;
+	height:100%;
+}
+
+//单行文本溢出 通用样式
+.singleLineTextStyle{
+	
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+//多行文本溢出 通用样式
+.moreLineTextStyle(@lineNum:3){
+	
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:@lineNum;
+	text-indent:2em;
+}
+
+
+//数据块内容标题
+.content_list_block_info_title{
+	
+	width:14rem;
+
+	font-size:1.1rem;
+	height:2.1rem;
+	line-height:2.1rem;
+	text-align:middle;
+	font-weight:bold;
+	.singleLineTextStyle;
+}
+
+//数据块作者类型容器						
+.content_list_block_info_box{
+
+	color: #666666;
+
+	font-weight:bold;
+	display:-ms-flexbox;
+	display:-webkit-box;
+	display:flex;
+	display:-webkit-flex;
+	height:1.2rem;
+	line-height:1.2rem;
+
+	
+}
+
+//作者名称
+.content_list_block_info_box_name{
+	
+	-ms-flex:1;
+	
+	    -webkit-box-flex:1;
+	
+	        -webkit-flex:1;
+	
+	        flex:1;
+	font-weight:bold;
+	text-align:left;
+	padding-left:1rem;
+	font-size:1rem;
+	.singleLineTextStyle;
+}
+
+//内容类型
+.content_list_block_info_box_type{
+	
+	-ms-flex:1;
+	
+	    -webkit-box-flex:1;
+	
+	        -webkit-flex:1;
+	
+	        flex:1;
+	text-align:right;
+	padding-right:1rem;
+	font-size:1rem;
+
+}
+
+//内容描述
+.content_list_block_info_desc{
+	
+	width:100%;
+	height:3.4rem;
+	margin-top:0.4rem;
+	color: #666666;
+	font-size:1rem;
+	//多行文本溢出
+	.moreLineTextStyle(3);
+}
+
+.content_list_bottom_botton{
+	width: 100%;
+	padding-left:1rem;
+	padding-right:1rem;
+	margin-top: 1rem;
+
+	display:-ms-flexbox;
+	display:-webkit-box;
+	display:flex;
+	display:-webkit-flex;
+
+}
+
+// 内容区 底部加载按键 '加载更多'
+.content_list_getMoreButton{
+
+  display:inline-block;
+  -ms-flex:3;
+
+	  -webkit-box-flex:3;
+
+          -webkit-flex:3;
+
+          flex:3;
+  
+  height: 3rem;
+  line-height: 3rem;
+  color: @headfontColor;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: @backColorGray;
+  outline: none;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+
+// 内容区 底部加载按键 '返回顶部'
+.content_list_goTopButton{
+  
+  display:inline-block;
+  -ms-flex:1;
+
+	  -webkit-box-flex:1;
+
+          -webkit-flex:1;
+
+          flex:1;
+  
+  height: 3rem;
+  line-height: 3rem;
+  color: @headfontColor;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: @backColorGray;
+  outline: none;
+  text-align: center;
+}
+
+
+
+//页尾区
+.footer{
+	margin-top:20px;
+	width: 100%;
+	height: 74px;
+	background-color:@headfontColor;
+	font-size:0.8rem;
+}
+
+//底部链接行
+.foot_link{
+	display:inline-block;
+	margin-top:8px;
+	height:24px;
+	line-height:24px;
+	width:100%;
+	text-align:center;
+}
+
+//底部链接
+.foot_link a{
+	font-weight:bold;
+	margin-left:0.8rem;
+	margin-right:0.8rem;
+	color:#FFF;
+}
+
+//底部 版本说明
+.foot_copyright{
+	
+	display:inline-block;
+	font-size:0.8rem;
+	width:100%;
+	height:14px;
+	line-height:14px;
+	text-align:center;
+	color:#CCC;
+}

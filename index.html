@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Traveller旅行家</title>
+	<!-- 根据设备类型 判断是否为移动页面 自动跳转 -->
+	<script type="text/javascript">
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			//alert(window.name);
+			if(window.name!='travellerPC'){
+				window.location = 'indexMobile.html'; //移动端页面相对路径
+			}else{
+				window.name='';
+			}
+			
+		}
+	</script>
+
+	<!--加载logo小图标-->
+	<link rel="shortcut icon" type="image/x-icon" href="res/static/img/favicon.ico"/>
+	<!--meta信息-->
+	<!--seo-->
+	<meta name="keywords" content="旅行家,VR视频,自助游,旅行体验">
+	<meta name="description" content="通过图文、视频、VR视频的形式提供虚拟旅行体验，以先行者记录的方式推荐旅行目的地、旅行路线及攻略，帮助用户更深入的体验旅行的精彩，传播旅行主义">
+	<meta name="author" content="yp">
+	<!--挂钩适配移动seo-->
+	<!--<meta name="mobile-agent" content="format=xhtml; url= ">-->
+	<!--渲染模式-->
+	<!--针对IE8及更高版本采用向上版本的兼容模式-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--针对360浏览器，采用webkit内核渲染-->
+	<meta name="render" content="webkit">
+	<!--css样式-->
+	<!--global 公共样式-->
+	<link rel="stylesheet" type="text/css" href="style/css/dist/global.css">
+	<!-- 首页整体样式 -->
+	<link rel="stylesheet" type="text/css" href="style/css/mainPage.css">
+	<link rel="stylesheet" type="text/css" href="style/css/cover.css">
+	<link rel="stylesheet" type="text/css" href="style/css/head.css">
+	<link rel="stylesheet" type="text/css" href="style/css/content.css">
+	<link rel="stylesheet" type="text/css" href="style/css/foot.css">
+	<!-- js脚本 -->
+	<!-- JQuery工具集(异步加载) -->
+	<script type="text/javascript" src='js/build/jquery-1.10.1.min.js' defer="defer"></script>
+</head>
+
+<body>
+	<div class="container">
+		<!-- 蒙层 -->
+		<div class='upfloor'>
+			<p class='upfloor_word'>让我们面对现实，让我们忠于理想 —— 切格瓦拉</p>
+		</div>
+		<!-- 封面区 -->
+		<div class="cover ">
+			<!--封面图-->
+			<img class="cover_img" src='res/static/img/cover_back2.png' width='100%' height='100%'/> 
+			<!--封面显示栏-->
+			<div class="cover_tag">
+				<i class="icon_tag">&#xe615;</i>
+			</div>
+			<!-- 二维码区 -->
+			<div class="cover_urlCode">
+				<img alt="扫描二维码" src="res/static/img/urlCode3.png"  width="100%" height="100%" />
+			</div>
+			<!-- 中央标题区 -->
+			<div class="cover_title">
+				<!-- <i class="icon_sun">&#xe6b6;</i> -->
+				<i class="icon_sun">&#xe612;</i>
+				<h1 class="cover_title_en">TRAVELLER</h1>
+				<h1 class="cover_title_ch">旅行家</h1>
+				<h1 >
+					<span class="cover_word_cn">你好,世界</span>
+					<span class="cover_word_en"><i class="icon_earth">&#xe614;</i>Hello World</span>
+				</h1>
+				
+			</div>
+			<!-- 下侧导航区 -->
+			<list class="cover_nav">
+				<!-- 登录按键区 -->
+				<li class="cover_login_button">&nbsp;
+					<i class="icon_nav">&#xe613;</i>
+					&nbsp;登录&nbsp;
+				</li>
+				<!-- 注册按键区 -->
+				<li class="cover_register_button">&nbsp;
+					<i class="icon_nav">&#xe60c;</i>
+					&nbsp;注册&nbsp;
+				</li>
+				<!-- 上拉图标区 -->
+				<li  class="cover_close_button_before">进入</li>
+				<li  class="cover_close_button">
+					<i class="icon_close">&#xe600;</i>
+				</li>
+				<li class="cover_close_button_after">主页</li>
+				<!-- 封面按键区 -->
+				<li class="cover_posion">&nbsp;
+					<i class="icon_nav">&#xe639;</i>
+					&nbsp;通知&nbsp;
+				</li>
+				<!-- 扫码按键区 -->
+				<li class="cover_urlCode_button">&nbsp;
+					<i class="icon_nav">&#xe60b;</i>
+					&nbsp;扫码&nbsp;
+				</li>
+			</list>
+
+			<!-- 登录区域 -->
+			<div class="cover_login">
+
+				<!-- 用户名输入 -->
+				<p class="cover_login_username">
+					<i class="icon_nav">&#xe613;</i>
+					<input class="cover_login_username_input" type="text" placeholder="用户名">
+				</p>
+				<!-- 密码输入 -->
+				<p class="cover_login_pwd">
+					<i class="icon_nav">&#xe60c;</i>
+					<input class="cover_login_pwd_input" type="password" placeholder="密码">
+				</p>
+				<!-- 密码再次输入 -->
+				<p class="cover_login_pwd_again">
+					<i class="icon_nav">&#xe60c;</i>
+					<input class="cover_login_pwd_input" type="password" placeholder="确认密码">
+				</p>
+				<!-- 登录/注册 -->
+				<p>
+					<input class="cover_login_login_button" type="button" name="" value='登录'>
+				</p>
+				<!-- 取消 -->
+				<p>
+					<input class="cover_login_cancel_button" type="button" name="" value='取消'>
+				</p>
+
+			</div>
+
+
+		</div>
+		<!-- 页首区 -->
+		<div class="header blurStyle">
+			<h1 class="header_title">旅行家<i class="icon_head_earth">&#xe614;</i>TRAVELLER</h1>
+			<div class="header_search">
+				<input class="header_search_input" type="text" autocomplete="off"  placeholder="搜索：目的地/旅行家" />
+				<a class="header_search_button" title='search' href=''><i class="icon_head_search">&#xe628;</i></a>
+			</div>
+			<p class="header_description">
+				<span><i class="icon_head_des">&#xe631;</i>9支旅行团队</span>
+				<span><i class="icon_head_des">&#xe613;</i>48位专业旅行家</span>
+				<span><i class="icon_head_des">&#xe617;</i>162个旅行目的地</span>
+				<span><i class="icon_head_des">&#xe62e;</i>341段旅行高清VR视频</span>
+				<span><i class="icon_head_des">&#xe60d;</i>1150个旅行故事等你发现</span>
+			</p>
+		</div>
+		<!-- 内容区 -->
+		<div class="content blurStyle">
+			<!-- 侧边栏 -->
+			<div class="content_sidebar">
+				<!-- 热门旅行目的地推荐 -->
+				<div class="content_sidebar_position">
+					<span class="content_sidebar_position_title"><i class="icon_content_icon">&#xe610;</i>热门目的地</span>
+					<span href='' class="content_sidebar_position_a" title='获取更多旅行家'>更多></span>
+					<ul class="content_sidebar_position_nav">
+						<li class='content_sidebar_position_list'>
+							<span class='content_sidebar_position_list_title' href=''>国内：</span>
+							<a href='' >西藏</a>
+							<a href='' >香格里拉</a>
+							<a href='' >台湾</a>
+						</li>
+
+						<li class='content_sidebar_position_list'>
+							<span class='content_sidebar_position_list_title' href=''>亚洲：</span>
+							<a href='' >清迈</a>
+							<a href='' >北海道</a>
+							<a href='' >普吉岛</a>
+						</li>
+
+						<li class='content_sidebar_position_list'>
+							<span class='content_sidebar_position_list_title' href=''>欧洲：</span>
+							<a href='' >伦敦</a>
+							<a href='' >慕尼黑</a>
+							<a href='' >巴黎</a>
+						</li>
+
+						<li class='content_sidebar_position_list'>
+							<span class='content_sidebar_position_list_title' href=''>北美洲：</span>
+							<a href='' >费城</a>
+							<a href='' >纽约</a>
+							<a href='' >多伦多</a>
+						</li>
+
+						<li class='content_sidebar_position_list'>
+							<span class='content_sidebar_position_list_title' href=''>南美洲：</span>
+							<a href='' >智力</a>
+							<a href='' >乌拉圭</a>
+							<a href='' >巴西</a>
+						</li>
+
+						<li class='content_sidebar_position_list'>
+							<span class='content_sidebar_position_list_title' href=''>大洋洲：</span>
+							<a href='' >悉尼</a>
+							<a href='' >帕劳</a>
+							<a href='' >墨尔本</a>
+						</li>
+
+						<li class='content_sidebar_position_list'>
+							<span class='content_sidebar_position_list_title' href=''>非洲：</span>
+							<a href='' >好望角</a>
+							<a href='' >摩洛哥</a>
+							<a href='' >南非</a>
+						</li>
+
+						<li class='content_sidebar_position_list'>
+							<span class='content_sidebar_position_list_title' href=''>南极洲：</span>
+							<a href='' >南乔治亚岛</a>
+							<a href='' >尼可港</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 旅行家推荐 -->
+				<div class="content_sidebar_person" id="content_sidebar_person">
+					
+				</div>
+			</div>
+			<!-- 轮播图 -->
+			<div class="content_demo" id='content_demo'></div>
+			<!-- 显示块 -->
+			<div class="content_list" id='content_list'>
+
+			</div>
+
+		</div>
+		<!-- 页尾区 -->
+		<div class="footer blurStyle">
+			<p class="foot_link">
+				<a title='Traveller' href='' >网站首页</a>
+				<!-- 禁止爬虫向外跳转 -->
+				<a href='' rel='nofollow' onclick="alert('邮箱：yupengrenren@163.com');">作者于鹏</a>
+				<a href='' rel='nofollow' >蚂蜂拼拼</a>
+				<a href='' rel='nofollow' >YP1024GAME</a>
+				<a href='' rel='nofollow' >平面设计</a>
+				<a href='' rel='nofollow' >视频剪辑</a>
+			</p>
+			<p class="foot_copyright">
+				Copyright&copy;2016v1.2&nbsp;本页面仅用于个人展示，不涉及任何商业用途.
+			</p>
+		</div>
+	</div>
+
+	<!-- js脚本 -->
+
+	<!-- 封面操作的脚本 -->
+	<script type="text/javascript"  defer="defer" src="js/cover.js"></script>
+	
+	<!-- React依赖 -->
+	<script type="text/javascript"  defer="defer" src="js/build/react.js"></script>
+	<script type="text/javascript"  defer="defer" src="js/build/react-dom.js"></script>
+	<script type="text/javascript"  defer="defer" src="js/build/browser.min.js"></script>
+
+	<!-- 图片延迟加载插件 -->
+	<script type="text/javascript"  defer="defer" src="js/build/jquery.lazyload.min.js"></script>
+	
+	<!-- 中央区轮播图jsx脚本(动态加载) -->
+	<script class='contentJSX' type="text/babel"  defer="defer"></script>
+	</body>
+	
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Traveller旅行家[移动版]</title>
+	<!--加载logo小图标-->
+	<link rel="shortcut icon" type="image/x-icon" href="res/static/img/favicon.ico"/>
+	<!-- 设置Iphone手机添加至主屏幕缩略图 -->
+	<link rel="apple_touch-icon-precomposed" size='72*72' href="res/static/img/favicon64.png">
+	<link rel="apple_touch-icon-precomposed" size='114*114' href="res/static/img/favicon64.png">
+	
+	<!--meta信息-->
+	<!-- 移动端设置 -->
+	<!-- 设置Iphone手机添加至主屏幕显示标题 -->
+	<meta name="apple-mobile-web-app-title" content="旅行家">
+	<!-- 自适应屏幕 -->
+	<meta name="viewport" content="width=device-width , initial-scale=1 , user-scalable=no">
+	<!-- 忽略页面中 数字识别电话号码和email识别 -->
+	<meta name="format-detection" content="telphone=no,email=no" >
+	<!-- 不让百度自动转码 -->
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<!--seo-->
+	<meta name="keywords" content="旅行家,VR视频,自助游,旅行体验">
+	<meta name="description" content="通过图文、视频、VR视频的形式提供虚拟旅行体验，以先行者记录的方式推荐旅行目的地、旅行路线及攻略，帮助用户更深入的体验旅行的精彩，传播旅行主义">
+	<meta name="author" content="yp">
+	<!--挂钩适配移动seo-->
+	<!--<meta name="mobile-agent" content="format=xhtml; url= ">-->
+	<!--渲染模式-->
+	<!--针对IE8及更高版本采用向上版本的兼容模式-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--针对360浏览器，采用webkit内核渲染-->
+	<meta name="render" content="webkit">
+
+	<!--css样式-->
+	<!--global 公共样式(共享)-->
+	<link rel="stylesheet" type="text/css" href="style/css/global.css">
+	<!-- 首页整体样式 -->
+	<link rel="stylesheet" type="text/css" href="style/mobile/css/dist/mainPage.css">
+	<!-- js脚本 -->
+	<!-- JQuery工具集(异步加载) -->
+	<script type="text/javascript" src='js/build/jquery-1.10.1.min.js' defer="defer"></script>
+	<!-- 轮播图滑动工具插件 -->
+	<script type="text/javascript" src='js/build/iSlider.min.js' defer="defer"></script>
+
+</head>
+<body>
+	<div class="container">
+
+		<!-- 页首区 -->
+		<div class="header blurStyle">
+			<h1 ><span class="header_title">旅行家<i class="icon_head_earth">&#xe614;</i>TRAVELLER</span></h1>
+			<div class="header_search">
+				<input class="header_search_input" type="text" autocomplete="off"  placeholder="搜索：目的地/旅行家" />
+				<a class="header_search_button" title='search' ><i class="icon_head_search">&#xe628;</i></a>
+			</div>
+			<p class="header_description">
+				<span><i class="icon_head_des">&#xe617;</i>262个旅行目的地攻略</span>
+				<span><i class="icon_head_des">&#xe631;</i>148位专业旅行家向导</span>
+			</p>
+		</div>
+
+		<!-- 内容区 -->
+		<div class="content blurStyle">
+			<!-- 轮播图 -->
+			<div class="content_demo" id='content_demo'></div>
+			<!-- 显示块 -->
+			<p class='content_list_block_line'>
+					<a class='content_list_hotButton content_list_buttom_selected' title='hot' >最热</a>
+					<a class='content_list_newButton' title='new' >最新</a>
+			</p>
+			<!-- 动态添加数据时 的模板 -->
+			<div class="content_list_block_model">
+				<section class="content_list_block_imgbox">
+					<img class="content_list_block_img" src='res/img/demo6.jpg' width='100%' height='100%' alt='' />
+				</section>
+				<article class="content_list_block_info">
+					<p class='content_list_block_info_title'>
+						游历欧洲：盛放的荷兰
+					</p>
+					<p class='content_list_block_info_box'>
+						<span class='content_list_block_info_box_name'>追梦格林</span>
+						<span class='content_list_block_info_box_type'><icon class='icon_content_icon'>&#xe60d;</icon>图文</span>
+					</p>
+					<p class='content_list_block_info_desc'>
+							本次的欧洲之行是行者部落组织的活动，首先要非常感谢行者部落的领队张大大，三月的里约热内卢就可以称作骄阳似火了
+					</p>
+				</article>
+			</div>
+			<!-- 动态加载数据容器 -->
+			<div class="content_list" id='content_list'>
+			</div>
+			<!-- 继续加载按键 -->
+			<p class='content_list_bottom_botton'>
+				<a class='content_list_goTopButton' title='goTop' >
+					<icon class='icon_content_icon'>&#xe63a;</icon>顶部
+				</a>
+				<a class='content_list_getMoreButton' title='getData'>
+					<icon class='icon_content_icon'>&#xe621;</icon>加载更多
+				</a>
+				
+
+					
+			</p>
+		</div>
+
+		<!-- 页尾区 -->
+		<div class="footer blurStyle">
+			<p class="foot_link">
+				<a title='travellerPC' class='footer_goPCButton' >PC端首页</a>
+				<!-- 禁止爬虫向外跳转 -->
+				<a href='' rel='nofollow' onclick="alert('邮箱：yupengrenren@163.com');">作者于鹏</a>
+				<a href='' rel='nofollow' >平面设计</a>
+				<a href='' rel='nofollow' >视频剪辑</a>
+			</p>
+			<p class="foot_copyright">
+				Copyright&copy;2016v1.2&nbsp;
+			</p>
+			<p class="foot_copyright">
+				本页面仅用于个人展示，不涉及任何商业用途.
+			</p>
+		</div>
+	</div>
+	
+	<!-- js脚本 -->
+	<!-- 快速点击插件，解决点击300ms延迟 -->
+	<script type="text/javascript"  defer="defer" src="js/build/fastclick.js"></script>
+	<!-- 动态加载数据脚本 -->
+	<script type="text/javascript"  defer="defer" src="js/mobile/content.js"></script>
+	<!-- 图片延迟加载插件 -->
+	<script type="text/javascript"  defer="defer" src="js/build/jquery.lazyload.min.js"></script>
+	
+	</body>
+	
+</body>
+</html>

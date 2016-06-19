@@ -1,0 +1,5 @@
+@charset "utf-8";
+@font-face{font-family:iconfont;src:url(../../res/static/font/iconfont.eot);src:url(../../res/static/font/iconfont.eot?#iefix) format('embedded-opentype'),url(../../res/static/font/iconfont.ttf) format('truetype'),url(../../res/static/font/iconfont.woff) format('woff'),url(../../res/static/font/iconfont.svg#iconfont) format('svg')}
+.iconfont{font-family:iconfont!important;font-size:26px;line-height:1;font-weight:400;color:#FFF;text-shadow:0 1px 10px rgba(0,0,0,.9);font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{background-color:#fff}
+.container{width:980px;margin:auto;position:absolute;left:0;right:0;color:#333}

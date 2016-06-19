@@ -1,0 +1,27 @@
+{
+	"baseURL":"res/img/dist/",
+	"list":
+	[{  
+		"imgFile":"demo1.jpg",  
+		"imgTitle":"致敬杰克.凯鲁亚克：穿越德克萨斯", 
+		"travellerFile":"t1.jpg",
+		"travellerName":"行者白楠",
+		"imgDate":"2016/05/23"
+	},  
+	{  
+		"imgFile":"demo2.jpg",  
+		"imgTitle":"关于一座小城的记忆：威尼斯浮生记",  
+		"travellerFile":"t2.jpg",
+		"travellerName":"李沧海",
+		"imgDate":"2016/05/26"
+	},  
+	{  
+		"imgFile":"demo3.jpg",
+		"imgTitle":"小梦帮倒忙（五）：饕鬄京都",  
+		"travellerFile":"t3.jpg",  
+		"travellerName":"小梦君",  
+		"imgDate":"2016/05/27"
+	}]
+}  
+
+

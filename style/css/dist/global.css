@@ -1,0 +1,15 @@
+@charset "utf-8";
+*{padding:0;margin:0}
+*,:after,:before{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-o-box-sizing:border-box}
+* html body{overflow:visible}
+body{font:14px/1.2 'Hiragino Sans GB','Macrosoft YaHei','微软雅黑',SimSun,Tahoma,Airal,Helvetica,STHeiti;font-smoothing:antialiased;-webkit-font-smoothing:antialiased;vertical-align:middle;word-wrap:break-word;word-break:break-all}
+a,b,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,i,img,li,ol,p,span,strong,table,td,th,ul{border:0}
+dd,dl,dt,li,ol,ul{list-style:none}
+a{text-decoration:none}
+a:active,a:hover,a:link,a:visited{text-decoration:none;outline:0}
+h1{font-size:24px}
+h2{font-size:20px}
+h3{font-size:18px}
+h4{font-size:16px}
+h5{font-size:14px}
+h6{font-size:12px}

@@ -1,0 +1,115 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'iconfont';
+  src: url('../../res/static/font/iconfont.eot');
+  src: url('../../res/static/font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../res/static/font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../../res/static/font/iconfont.woff') format('woff'), /* chrome、firefox */ url('../../res/static/font/iconfont.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+.header {
+  margin-top: 42px;
+  padding-top: 1px;
+  width: 980px;
+  height: 164px;
+  color: #333333;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(200, 200, 200, 0.3);
+}
+.icon_head_earth {
+  font-family: "iconfont" !important;
+  line-height: 1;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon_head_search {
+  font-family: "iconfont" !important;
+  line-height: 1;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon_head_des {
+  font-family: "iconfont" !important;
+  line-height: 1;
+  font-style: normal;
+  letter-spacing: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.header_title {
+  font-size: 54px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  vertical-align: text-bottom;
+  letter-spacing: 1px;
+  position: relative;
+}
+.header_title:before {
+  content: '\200B';
+  position: absolute;
+  top: -4px;
+  left: 206px;
+  width: 24px;
+  height: 24px;
+  border-top: 7px solid #333333;
+  border-left: 7px solid #333333;
+  border-top-left-radius: 10px;
+}
+.header_title:after {
+  content: '\200B';
+  position: absolute;
+  bottom: -2px;
+  right: 208px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 7px solid #333333;
+  border-right: 7px solid #333333;
+  border-bottom-right-radius: 10px;
+}
+.header_search_input {
+  width: 680px;
+  height: 45px;
+  text-indent: 2em;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 2px solid #999999;
+  font-family: 'Hiragino Sans GB', 'Macrosoft YaHei', '微软雅黑', SimSun, Tahoma, Airal, Helvetica, STHeiti;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFAFA;
+  outline: none;
+}
+.header_search_button {
+  width: 50px;
+  height: 45px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid #999999;
+  font-family: 'Hiragino Sans GB', 'Macrosoft YaHei', '微软雅黑', SimSun, Tahoma, Airal, Helvetica, STHeiti;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  color: #999999;
+  text-align: center;
+  line-height: 40px;
+  margin-left: -7px;
+}
+.header_search_button:hover {
+  color: #333333;
+}
+.header_description {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #666666;
+  -webkit-font-smoothing: antialiased;
+}
+.header_description span {
+  margin-left: 6px;
+  margin-right: 6px;
+}
