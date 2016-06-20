@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+.headdiv{margin-left:-8px; margin-top:-8px; width:100%;}
+.div-center{position:absolute; margin:0 auto; width:990px; left:50%; margin-left:-495px; height:780px;}
+.body-left{	float:left; width:705px; margin:0;}
+.body-right{ float:left; width:280px; margin:0; height:436px;}
+.body-right-div{ float:left; width:132px; margin:0; height:92px; margin-left:8px; }
+.body-right-div-img{ height:90px; }
+.body-right-div-img-hover{ height:100px; cursor:pointer;}
+.body-right-img{ margin-top:10px;}
+
+.bg{position:absolute; width:100%; height:auto; background-color:#333;z-index:42;top:0;left:0;filter:alpha(opacity=40);opacity:0.4; display:none;}
+.bg-content{width:640px;height:480px;position:absolute;top:50%;margin-top:-250px;background:#fff;z-index:43;left:50%;margin-left:-320px; padding:0px; text-align:center;  display:none;}
+.head{ width:600px; height:50px; margin-top:20px;}
+.title{ font-family:"微软雅黑"; width:400px; color:#39C; font-size:28px; line-height:40px; float:left; position:absolute; left:50%; margin-left:-200px; }
+.close{float:right; cursor:pointer; }
+.bg-content hr{ color:#999; width:560px; line-height:20px; margin-top:20px; padding:0px; }
+.bg-content .info{ width:548px; height:50px;  position:absolute; left:50%; margin-left:-274px; cursor:default; }
+.bg-content .info .inner{ width:180px; height:45px;  float:left; font-family:"微软雅黑"; color:#39C; font-size:18px; }
+.bg-content .info .inner .fontCurrent{  font-size:24px; font-weight:bold;}
+.bg-content .info .inner .fontNext{  font-size:24px; font-weight:bold;}
+
+.puzzle-body{ border:solid medium #CCC; height:436px; width:990px; padding:0px; }
+.puzzle-body-left{ border-right:solid medium #CCC; float:left; height:436px; width:260px; margin:0px; background-color:#F0F0F0;  }
+.puzzle-body-left-pic{border:solid medium #000; height:133px; width:220px; padding:0px; margin:0px; left:20px; top:10px; position:relative; margin-bottom:16px;}
+.puzzle-body-left-pic-defination{ position:relative;width:240px; left:50%; margin-left:-120px; height:60px; font-family:"微软雅黑"; line-height:20px; margin-bottom:5px; text-decoration:underline; font-size:14px; }
+.puzzle-body-left-time-back{ margin:0px; padding:0px; width:240px; height:25px; background-image:url(../pic/tiao1.gif); margin-left:10px; margin-bottom:5px; background-repeat:no-repeat; background-position:-150px 0px; }
+.puzzle-body-left-time-inner{ margin:0px; padding:0px; width:160px; height:25px; float:left;}
+.puzzle-body-left-time-word{padding:0px; margin:0px; margin-left:10px; font-weight:bold; font-family:"微软雅黑"; font-size:16px; line-height:24px;}
+
+.puzzle-body-left-startButton{ position:relative; width:180px; left:50%; margin-left:-90px; height:40px; font-family:"微软雅黑"; text-align:center; background-image:url(../pic/buttonback2.gif); line-height:36px; margin-bottom:5px; cursor:pointer; color:#FFF; }
+.puzzle-body-left-soundDiv{ position:relative; width:210px; left:50%; margin-left:-105px; height:48px; font-family:"微软雅黑"; text-align:center; font-size:14px; padding:0px; }
+.puzzle-body-left-soundDiv-soundCrotrol{ height:45px; width:100px; float:left; }
+
+.puzzle-body-right{position:absolute; left:269px; float:left; height:436px; width:720px; margin:0px; padding:0px; border-left:solid medium #CCC; }
+.puzzle-body-right-pic-inner{position:absolute; left:28px; top:28px; width:500px; height:375px; border:solid 2px #666; background-image:url(../pic/innerBack.jpg);margin:0px; padding:0px; float:left;}
+.puzzle-body-right-pic-block{ position:absolute; left:560px; top:25px;  width:135px; height:135px; z-index:9; margin:0; padding:0; background-image:url(../pic/block.jpg); z-index:1;}
+.puzzle-body-right-pic-block-inner{position:absolute; left:565px; top:30px; background-color:#39C; width:125px; height:125px; padding:0px; margin:0px; z-index:2; display:none; border:solid #000 0px; cursor:move;}
+.puzzle-body-right-pic-block-inner-result{position:absolute; left:565px; top:30px; background-color:#39C; width:125px; height:125px; padding:0px; margin:0px; border:solid #000 0px; z-index:30; display:none; }

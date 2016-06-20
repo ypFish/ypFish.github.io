@@ -1,0 +1,27 @@
+// JavaScript Document
+	$(document).ready(
+		 function(){
+			$(".body-right").on(
+				"click",
+				".body-right-div-img",
+				function(){
+					if(window.localStorage){
+						window.localStorage.cityNumber=$(this).attr("id");;	
+					}
+					window.location="MaFengPuzzle_Game.html";	
+				}
+			).on(
+				'mouseenter',
+				".body-right-div-img",
+				function(){
+					 $(this).height(100);	
+				}
+			).on(
+				'mouseleave',
+				".body-right-div-img",
+				function(){
+					$(this).height(90);	
+				}
+			);
+		}
+	);

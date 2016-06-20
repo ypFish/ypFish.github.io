@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>蚂蜂拼拼v1.0</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="bg"></div>
+<div class="bg-content">
+<div class="head">
+<div class="title">蜂窝拼拼-MafengPuzzle</div>
+<div class="close"><img src="pic/closelabel.gif"></div>
+</div>
+<img id="bg-content-pic" src="" width="540"/>
+<hr/>
+<div class="info">
+<div class="inner">本站：<font class="fontCurrent"></font></div>
+<div  class="inner"></div>
+<div class="inner">下一站：<font class="fontNext"></font></div>
+</div>
+</div>
+
+<div class="headdiv"> 
+	<img src="pic/head.png" />
+</div>
+<br/>
+<div class="div-center">
+	<div class="puzzle-body">
+    	<div class="puzzle-body-left">
+        	<div class="puzzle-body-left-pic"><img class="puzzle-body-left-pic-img" width="220px"></div>
+            <div class="puzzle-body-left-pic-defination">
+            	
+            </div>
+            <div class="puzzle-body-left-time-back">
+            	<img class="puzzle-body-left-time-inner" src="pic/tiaobackground0.gif"><font class="puzzle-body-left-time-word">剩余：</font>
+            </div>
+            <div class="puzzle-body-left-startButton">开始游戏</div>
+            <div class="puzzle-body-left-startButton">下一城市</div>
+            <div class="puzzle-body-left-startButton">退出游戏</div>
+            <div class="puzzle-body-left-soundDiv">
+            	<div class="puzzle-body-left-soundDiv-soundCrotrol">背景音:<img id="backSound" src="pic/on.gif" /></div>
+                <div class="puzzle-body-left-soundDiv-soundCrotrol">按键音:<img id="buttonSound" src="pic/on.gif" /></div>
+            </div>
+        </div>
+        <div class="puzzle-body-right">
+            <div class="puzzle-body-right-pic-inner"></div>
+            <div class="puzzle-body-right-pic-block"></div>
+            <div class="puzzle-body-right-pic-block-inner-result"></div>
+        </div>
+    </div>
+    <div>
+    	<img src="pic/bottom.png" />
+    </div>
+</div>
+<bgsound  id="backgroundMusicIE"  loop="-1"  />
+<bgsound  id="buttonMusicIE"  loop="1" volume="-500"/>
+<audio id="backgroundMusic" loop="loop"></audio>
+<audio id="buttonMusic" ></audio>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js">
+</script>
+<script type="text/javascript" src="js/puzzleJavascript.js"></script>
