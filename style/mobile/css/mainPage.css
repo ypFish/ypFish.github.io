@@ -242,8 +242,6 @@ html {
   text-align: right;
 }
 .content_list_block_line {
-  border-bottom: 1px solid #CCCCCC;
-  border-top: 1px solid rgba(0, 0, 0, 0);
   width: 100%;
   height: 2rem;
   margin-top: 0.2rem;
@@ -271,13 +269,29 @@ html {
   color: #FFFFFF;
   background-color: #DC143C;
 }
-content_list {
+.content_list {
   width: 100%;
+}
+.content_wait_tip {
+  position: relative;
+  width: 100%;
+  height: 0;
+  background-color: #ECECEC;
+  overflow: hidden;
+}
+.content_wait_tip_word {
+  height: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+  color: #818181;
+  display: none;
 }
 .content_list_block {
   width: 96%;
   height: 8rem;
-  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
   margin-left: 2%;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -290,7 +304,7 @@ content_list {
 .content_list_block_model {
   width: 96%;
   height: 8rem;
-  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
   margin-left: 2%;
   display: -ms-flexbox;
   display: -webkit-box;

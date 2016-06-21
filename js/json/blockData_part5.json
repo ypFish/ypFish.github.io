@@ -1,0 +1,24 @@
+{
+	"baseURL":"res/img/",
+	"list":
+	[{  
+			"blockFile":"demo26.jpg",  
+			"blockTitle":"烈日炎炎，黄沙漫漫",
+			"travellerFile":"traveller3.jpg",
+			"travellerName":"YuPeng",
+			"blockDate":"2016/07/10",
+			"bloclDesc":"本次的里约之行是行者部落组织的活动，首先要非常感谢行者部落的领队张大大，三月的里约热内卢就可以称作骄阳似火了",
+			"blockType":"2",
+			"blockHot":"8.2万"
+		}, 
+		{  
+			"blockFile":"demo25.jpg",  
+			"blockTitle":"神秘的复活节岛",
+			"travellerFile":"traveller2.jpg",
+			"travellerName":"行者YP",
+			"blockDate":"2016/07/06",
+			"bloclDesc":"深秋时节的富士山别有韵味，此行的目的不光是看富士山，更重要的是了解关东文化，它作为日本关东地区特有的文化，似乎与整个日本文化都格格不入",
+			"blockType":"1",
+			"blockHot":"8万"
+		}]
+}

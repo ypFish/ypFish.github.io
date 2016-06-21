@@ -35,7 +35,7 @@
 	<!--global 公共样式(共享)-->
 	<link rel="stylesheet" type="text/css" href="style/css/global.css">
 	<!-- 首页整体样式 -->
-	<link rel="stylesheet" type="text/css" href="style/mobile/css/dist/mainPage.css">
+	<link rel="stylesheet" type="text/css" href="style/mobile/css/mainPage.css">
 	<!-- js脚本 -->
 	<!-- JQuery工具集(异步加载) -->
 	<script type="text/javascript" src='js/build/jquery-1.10.1.min.js' defer="defer"></script>
@@ -86,20 +86,24 @@
 					</p>
 				</article>
 			</div>
+			<!-- 下拉加载提示 -->
+				<div class="content_wait_tip">
+					<p class="content_wait_tip_word">努力获取最新数据</p>
+				</div>
 			<!-- 动态加载数据容器 -->
 			<div class="content_list" id='content_list'>
+
 			</div>
 			<!-- 继续加载按键 -->
 			<p class='content_list_bottom_botton'>
+
 				<a class='content_list_goTopButton' title='goTop' >
 					<icon class='icon_content_icon'>&#xe63a;</icon>顶部
 				</a>
 				<a class='content_list_getMoreButton' title='getData'>
 					<icon class='icon_content_icon'>&#xe621;</icon>加载更多
 				</a>
-				
-
-					
+	
 			</p>
 		</div>
 
@@ -108,7 +112,7 @@
 			<p class="foot_link">
 				<a title='travellerPC' class='footer_goPCButton' >PC端首页</a>
 				<!-- 禁止爬虫向外跳转 -->
-				<a href='' rel='nofollow' onclick="alert('邮箱：yupengrenren@163.com');">作者于鹏</a>
+				<a rel='nofollow' onclick="alert('邮箱：yupengrenren@163.com');">作者于鹏</a>
 				<a href='' rel='nofollow' >平面设计</a>
 				<a href='' rel='nofollow' >视频剪辑</a>
 			</p>

@@ -1,0 +1,14 @@
+{
+	"baseURL":"res/img/",
+	"list":
+	[{  
+			"blockFile":"demo14.jpg",  
+			"blockTitle":"穷游欧洲：浪漫巴黎",
+			"travellerFile":"traveller2.jpg",
+			"travellerName":"大鱼",
+			"blockDate":"2016/07/06",
+			"bloclDesc":"深秋时节的富士山别有韵味，此行的目的不光是看富士山，更重要的是了解关东文化，它作为日本关东地区特有的文化，似乎与整个日本文化都格格不入",
+			"blockType":"2",
+			"blockHot":"8万"
+		}]
+}
