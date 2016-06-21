@@ -10,7 +10,7 @@ $(function(){
 	//渲染头图
 	ContentComponent.renderDemo();
 	//渲染数据列
-	ContentComponent.renderBlock();
+	ContentComponent.renderBlock(ContentComponent.blockDataJsonFilePath[0]);
 	//注册最新/最热按钮事件
 	ContentComponent.addContentListButtonEvent();
 	//注册底部加载/返回按钮事件
@@ -19,6 +19,8 @@ $(function(){
 	ContentComponent.addSearchButtonEvent();
 	//注册底部返回PC端按键事件
 	FooterComponent.addfooterGoPCButtonEvent();
+	//监听内容区滑动动作
+	ContentComponent.addContentSlideEvent();
 
 });
 
@@ -40,10 +42,14 @@ var FooterComponent = {
 //内容区组件
 var ContentComponent = {
 
-	//配置文件路径
+	//配置加载数据文件路径
 	blockDataJsonFilePath : ['js/json/blockData_part1.json','js/json/blockData_part2.json','js/json/blockData_part3.json','js/json/blockData_part4.json'],
+	//配置更新数据文件路径
+	blockUpdateJsonFilePath:['js/json/blockData_part5.json','js/json/blockData_part6.json'],
+
 	//当前页面json数据来源(0:最热，1:最新)
 	currentJsonNum:0,
+	updateJsonNum:0,
 	//渲染头图
 	renderDemo : function(){
 
@@ -103,11 +109,13 @@ var ContentComponent = {
 		);
 	},
 	//渲染显示块，
+	//blockDataJsonFilePath:String 读取的json数据的JSON文件地址
 	//callback :function 获取数据并渲染完成后的回调函数（可选）
-	//removeAll:boolean  是否清空原列表 true:清空 false:不清空（可选）
-	renderBlock:function(callback,removeAll){
+	//isRemoveAll:boolean  是否清空原列表 true:清空 false:不清空（可选）
+	//isInsertHead:boolean 是否从列表头部插入显示信息 true 从头部插入 false 从尾部插入（可选）
+	renderBlock:function(blockDataJsonFilePath,callback,isRemoveAll,isInsertHead){
 
-		$.getJSON(this.blockDataJsonFilePath[this.currentJsonNum],function(data){
+		$.getJSON(blockDataJsonFilePath,function(data){
 
 			//获取json对象
 			var len = data.list.length;
@@ -115,7 +123,7 @@ var ContentComponent = {
 			var $parentDom = $('#content_list');
 
 			//是否清空原来的列表
-			if(removeAll){
+			if(isRemoveAll){
 				$parentDom.empty();
 			}
 			var lazyLoadClassName = 'block'+this.currentJsonNum;
@@ -163,8 +171,14 @@ var ContentComponent = {
 				var $desc     = $block.children().eq(1).children().eq(2);
 				$desc.text(data.list[i].bloclDesc);
 
-				//从后面插入父节点
-				$parentDom.append($block);
+				if(isInsertHead){
+					//从前面插入父节点
+    				$parentDom.prepend($block);
+				}else{
+					//从后面插入父节点
+					$parentDom.append($block);
+				}
+				
 
 				
 			}
@@ -203,7 +217,8 @@ var ContentComponent = {
 					};
 					//改变列表数据
 					_this.currentJsonNum=0;
-					_this.renderBlock(changeState,true);
+					_this.updateJsonNum=0;
+					_this.renderBlock(_this.blockDataJsonFilePath[_this.currentJsonNum],changeState,true);
 
 				}
 			}
@@ -222,7 +237,8 @@ var ContentComponent = {
 					};
 					//改变列表数据
 					_this.currentJsonNum=1;
-					_this.renderBlock(callback,true);
+					_this.updateJsonNum=0;
+					_this.renderBlock(_this.blockDataJsonFilePath[_this.currentJsonNum],callback,true);
 
 				}
 			}
@@ -261,7 +277,130 @@ var ContentComponent = {
 					};
 				}
 				
-				_this.renderBlock(callback,false);
+				_this.renderBlock(_this.blockDataJsonFilePath[_this.currentJsonNum],callback,false);
+				
+			}
+		);
+	},
+	addContentSlideEvent:function(){
+
+		//初始触点坐标
+		var startClientX,startClientY,startPageX,startPageY;
+		//上一次提示框高度
+		var lastTipHeight = 0 ;
+		//提示框默认高度边界值
+		var tipHeight = $('.content_wait_tip_word').height();
+		var _this = this;
+		//定义收起提示框函数
+		var closeTip = function(){
+			var height = $('.content_wait_tip').height();
+			if(height>0){
+				//还原为初始状态
+				
+				$('.content_wait_tip_word').fadeOut('slow',function(){
+					$('.content_wait_tip').animate(
+						{height:0},
+						200,
+						function(){
+							$('.content_wait_tip_word').text('努力获取最新数据');
+						}
+					);
+					
+				});
+				lastTipHeight = 0;
+			}
+		};
+
+		$('#content_list').on(
+			'touchstart',
+			function(event){
+				//初始化触点值
+				var touchObj = event.originalEvent.touches[0];
+				startClientX = touchObj.clientX;
+				startClientY = touchObj.clientY;
+				startPageX = touchObj.pageX;
+				startPageY = touchObj.pageY;
+				
+				//console.log("clientX:"+.clientX+";clientY:"+event.originalEvent.targetTouches[0].clientY);
+				//console.log("pageX:"+event.originalEvent.targetTouches[0].pageX+";pageY:"+event.originalEvent.targetTouches[0].pageY);
+				
+			}
+		).on(
+			'touchmove',
+			function(event){
+				
+				//初始化触点值
+				var touchObj = event.originalEvent.touches[event.originalEvent.touches.length-1];
+				var endClientX,endClientY,endPageX,endPageY;
+				endClientX = touchObj.clientX;
+				endClientY = touchObj.clientY;
+				endPageX = touchObj.pageX;
+				endPageY = touchObj.pageY;
+
+				//横向滑动距离的绝对值 包括负数
+				var wSlideLengthAbs = Math.abs(endPageX - startPageX);
+				//纵向滑动距离 包括负数
+				var hSlideLength = endPageY - startPageY;
+				if(startClientY&&startPageY){
+					//确认之前发生过'触摸开始'事件
+					if(Math.abs(startPageY-startClientY)<1){
+						//确认用户滑动操作时区域视口在页面最上边
+						if(hSlideLength>0){
+							//确认为向下滑动，且滑动距离〉0
+							event.preventDefault();
+							if((hSlideLength-wSlideLengthAbs)>0){
+								//确认为左斜下方滑动 或 右斜下方滑动 而不是横向滑动 滑动角度要〉45
+								//计算显示的提示框高度 使用平方函数，设定阻尼值为12
+								var tipMoveLength = Math.sqrt(hSlideLength*12);
+								if(tipMoveLength<lastTipHeight){
+									return ;
+								}
+								$('.content_wait_tip').height(tipMoveLength);
+								if(tipMoveLength>tipHeight){
+									lastTipHeight = tipHeight;
+									$('.content_wait_tip_word').fadeIn('slow');
+								}
+								
+								
+								
+							}
+						}
+					}
+
+
+				}
+				
+			}
+		).on(
+			'touchend',
+			function(event){
+				//触摸结束
+				var touchObj = event.originalEvent.changedTouches[event.originalEvent.changedTouches.length-1];
+				var endClientX,endClientY,endPageX,endPageY;
+				endClientX = touchObj.clientX;
+				endClientY = touchObj.clientY;
+				endPageX = touchObj.pageX;
+				endPageY = touchObj.pageY;
+				var height = $('.content_wait_tip').height();
+				if(height>0){
+					if(height>=tipHeight){
+						//更新数据
+						if(_this.updateJsonNum<_this.blockUpdateJsonFilePath.length){
+							//有数据需要更新
+							//$('.content_wait_tip_word').text('更新了2条数据');
+							_this.renderBlock(_this.blockUpdateJsonFilePath[_this.updateJsonNum],closeTip,false,true);
+							_this.updateJsonNum++;
+						}else{
+							//无数据更新
+							$('.content_wait_tip_word').text('当前已为最新数据');
+							setTimeout(closeTip,1600);
+						}
+					}else{
+						//还原提示框
+						closeTip();
+					}
+				}
+
 				
 			}
 		);
